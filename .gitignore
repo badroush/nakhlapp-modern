@@ -1,0 +1,25 @@
+# Build
+target/
+bin/
+out/
+*.class
+*.jar
+!lib/.gitkeep
+
+# Dépendances locales (récupérées via Maven)
+lib/*.jar
+
+# IDE Eclipse / VS Code
+.settings/
+.classpath
+.project
+.idea/
+*.iml
+.vscode/
+
+# OS / secrets locaux
+.DS_Store
+Thumbs.db
+*.log
+.env
+*.local.properties
