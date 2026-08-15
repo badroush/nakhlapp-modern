@@ -1,74 +1,77 @@
-# NAKHLA Modern - منظومة التصرف في التمور
+# 🌴 NakhlApp Modern
 
-Application Java modernisée conservant le schéma MySQL et la logique métier de la version NetBeans (2023).
+> A modern digital application for palm farming management, agricultural data organization and smart agriculture services.
 
-## Améliorations par rapport à l'ancienne version
+![Java](https://img.shields.io/badge/Java-Programming%20Language-orange?logo=openjdk)
+![Android](https://img.shields.io/badge/Android-Mobile%20Application-3DDC84?logo=android)
+![Firebase](https://img.shields.io/badge/Firebase-Backend-FFCA28?logo=firebase)
+![Smart Agriculture](https://img.shields.io/badge/Smart-Agriculture-4CAF50)
 
-| Ancien | Modernisé |
-|--------|-----------|
-| NetBeans Ant + 80+ JAR locaux | Maven + dépendances centralisées |
-| SQL concaténé (injection SQL) | PreparedStatement |
-| Variables statiques globales (`Pass.nm`, `ListeAgr.nmagr`...) | SessionContext |
-| IP MySQL codée en dur (`192.168.1.200`) | `application.properties` / variables d'environnement |
-| Bug Pass0 (pas d'appel `getConnection`) | Corrigé dans l'ancien + nouveau flux propre |
-| Une JFrame par écran | Fenêtre unique + navigation latérale |
-| Java 8 / Nimbus | Java 17 + FlatLaf |
+---
 
-## Prérequis
+## 📌 Overview
 
-- Java 17+
-- Maven 3.9+ (ou utiliser le script PowerShell)
-- MySQL avec la base `tamr` (voir `../nakhla_db.sql`)
+**NakhlApp Modern** is an agricultural application designed around the management and digitalization of palm farming activities.
 
-## Configuration
+The project explores how mobile technologies, cloud services and structured agricultural data can be combined to provide digital tools for palm growers and agricultural stakeholders.
 
-Éditer `src/main/resources/application.properties` :
+The application is part of an approach toward **smart agriculture**, where digital technologies can help improve information management, monitoring and decision-making.
 
-```properties
-db.host=localhost
-db.port=3306
-```
+---
 
-Ou variables d'environnement : `DB_HOST`, `DB_PORT`.
+## 🎯 Objectives
 
-## Lancement avec Maven
+The main objectives of NakhlApp Modern are to:
 
-```bash
-cd nakhlapp-modern
-mvn package
-java -jar target/nakhlapp-modern-2.0.0.jar
-```
+- 🌴 Digitalize palm farming information
+- 📊 Organize agricultural data
+- 📱 Provide a mobile interface for field-related information
+- ☁️ Integrate cloud-based services
+- 🗃️ Centralize agricultural information
+- 🌱 Explore smart agriculture concepts
+- 🚀 Provide a foundation for future agricultural digital services
 
-## Lancement sans Maven (PowerShell)
+---
 
-```powershell
-cd nakhlapp-modern
-.\build.ps1
-.\run.ps1
-```
+# ✨ Key Features
 
-## Sections disponibles
+The project is designed around the following concepts:
 
-1. **Connexion BD** – équivalent `Pass0`
-2. **Login** – équivalent `Pass` (MD5 compatible)
-3. **Tableau de bord** – équivalent `FirstPage`
-4. **الفلاحون** – `Agriculteur` / table `client`
-5. **التجار** – `Commercant`
-6. **الأقفاص** – `Cage`
-7. **الشركة** – `Societe`
-8. **المنتجات** – `produit`
-9. **أسعار المنتجات** – `Prixproduit` / `cageprod`
-10. **المستخدمون** – `Users`
-11. **المشتريات** – `Index` / table `operation`
-12. **التسويات** – `Reglement`
-13. **حركة الأقفاص** – `Mouvement_cage`
-14. **التقارires / الإعدادات** – placeholders (JasperReports `src/NakhlaReports`)
+- 🌴 Palm farming management
+- 📱 Android mobile application
+- 🗂️ Agricultural data management
+- ☁️ Firebase integration
+- 📊 Information visualization
+- 🔄 Cloud-based data synchronization
+- 🌱 Smart agriculture concepts
 
-## Compte par défaut (base exemple)
+Additional modules can be integrated as the application evolves.
 
-- Utilisateur : `admin`
-- Mot de passe : `admin` (MD5 dans la table `user`)
+---
 
-## Ancienne application
+# 🏗️ Architecture
 
-Le projet NetBeans d'origine reste dans `../src/nakhlapp`. Des corrections ont été appliquées à `Pass0.java` et `DbCon.java`.
+The application follows a mobile/cloud architecture:
+
+```text
+┌───────────────────────────┐
+│      Android Device       │
+│                           │
+│       NakhlApp            │
+│                           │
+│     Java Application      │
+└─────────────┬─────────────┘
+              │
+              │ Internet
+              ▼
+┌───────────────────────────┐
+│          Firebase         │
+│                           │
+│  ┌─────────────────────┐  │
+│  │      Database       │  │
+│  └─────────────────────┘  │
+│                           │
+│  ┌─────────────────────┐  │
+│  │ Cloud Services      │  │
+│  └─────────────────────┘  │
+└───────────────────────────┘
